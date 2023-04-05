@@ -36,9 +36,19 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: optimized_pack_${{ github.run_id }}
-      - name: Rename pack file
-        run: mv pack.zip ojousaba_resourcepack_${{ github.ref_name }}.zip
-      - name: Create release
-        uses: softprops/action-gh-release@v1
+      # - name: Rename pack file
+      #   run: mv pack.zip ojousaba_resourcepack_${{ github.ref_name }}.zip
+      - name: Get url to upload to release from artifact
+        id: get_url
+        run: |
+          url=$(cat artifact/url.txt)
+          echo "##[set-output name=upload_url;]$url"
+      - name: Upload File
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          files: ojousaba_resourcepack_${{ github.ref_name }}.zip
+          upload_url: ${{ steps.get_url.outputs.upload_url }}
+          asset_path: ./$ojousaba_resourcepack_${{ github.ref_name }}.zip
+          asset_name: ojousaba_resourcepack__${{ github.ref_name }}.zip
+          asset_content_type: application/octet-stream
