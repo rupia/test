@@ -3,11 +3,13 @@ permissions:
   contents: write
 
 on:
-  push:
-    branches:
-      - '**'
-    paths:
-      - 'pack/**'
+  release:
+    types: [published]
+#   release:
+#     branches:
+#       - '**'
+#     paths:
+#       - 'pack/**'
 
 jobs:
   build:
