@@ -3,13 +3,11 @@ permissions:
   contents: write
 
 on:
-  release:
-    types: [published]
-#   release:
-#     branches:
-#       - '**'
-#     paths:
-#       - 'pack/**'
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'pack/**'
 
 jobs:
   build:
@@ -37,8 +35,8 @@ jobs:
         with:
           name: optimized_pack_${{ github.run_id }}
       - name: Rename pack file
-        run: mv pack.zip ${{ github.ref_name }}.zip
+        run: mv pack.zip ojousaba_resourcepack_${{ github.ref_name }}.zip
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ github.ref_name }}.zip
+          files: ojousaba_resourcepack_${{ github.ref_name }}.zip
