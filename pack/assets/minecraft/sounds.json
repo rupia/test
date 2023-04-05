@@ -1,0 +1,80 @@
+{
+  "pyonphone.open": {
+    "sounds": [
+      {
+        "name": "pyonphone/open",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "pyonphone.close": {
+    "sounds": [
+      {
+        "name": "pyonphone/close",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "pyonphone.ok1": {
+    "sounds": [
+      {
+        "name": "pyonphone/ok1",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "pyonphone.ng1": {
+    "sounds": [
+      {
+        "name": "pyonphone/ng1",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "pyonphone.ng2": {
+    "sounds": [
+      {
+        "name": "pyonphone/ng2",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "pyonphone.cookie.click": {
+    "sounds": [
+      {
+        "name": "pyonphone/cookie_click1",
+        "volume": 0.5,
+        "weight": 5
+      },
+      {
+        "name": "pyonphone/cookie_click2",
+        "volume": 0.5,
+        "weight": 1
+      }
+    ],
+    "replace": true
+  },
+  "school.chime.harf": {
+    "sounds": [
+      {
+        "name": "school/chime_half",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  },
+  "school.chime.full": {
+    "sounds": [
+      {
+        "name": "school/chime_full",
+        "volume": 0.5
+      }
+    ],
+    "replace": true
+  }
+}
